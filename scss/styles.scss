@@ -33,20 +33,26 @@
     ------------------------
 */
 
+/* COLORI BOOLEAN
+BIANCO: #fff
+GRIGIO: #e8ebf1
+BLU: #1b3c59
+VERDE: #61ce4e
+*/
 // Define base and accent colors
-$base-color: #3498db;
+$base-color: #1b3c59;
 $base-color-hover: darken($base-color, 10%);
 
 // Define background colors
 $background: #fff;
-$background-alt: #f2f2f5;
+$background-alt: #e8ebf1;
 
 // Define border colors
-$border: #dcd9d9;
+$border: #e8ebf1;
 
 // Define text colors
-$heading: #374054;
-$text: #74808a;
+$heading: #1b3c59;
+$text: #1b3c59;
 
 /*
     ---------------------
@@ -164,6 +170,12 @@ header {
 
     li {
         display: inline-block;
+
+        .profile-img {
+            height: 60px;
+            width: auto;
+            border-radius: 50%;
+        }
     }
 
     a {
@@ -454,6 +466,7 @@ footer {
     }
 
     p {
+        text-align: center;
         color: $text;
         margin: 0;
     }
@@ -503,6 +516,13 @@ footer {
         top: 100%;
         left: 303px;
     }
+
+    ul {
+        li {
+            color: $text;
+            font-size: 0.9em;
+        }
+    }
 }
 
 .vtimeline-content {
@@ -538,7 +558,7 @@ footer {
 .vtimeline-point {
     position: relative;
     display: block;
-    vertical-align: top;
+    // vertical-align: top;
     margin-bottom: 30px;
 }
 
@@ -621,6 +641,10 @@ footer {
 
     ul {
         padding: 0 0 0 15px;
+
+        li {
+            font-size: 0.9em;
+        }
     }
 }
 
@@ -651,7 +675,15 @@ footer {
 }
 
 .project-image {
+    width: 300px;
+    height: 300px;
     float: left;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 .project-info {
@@ -704,14 +736,16 @@ footer {
     }
 
     ul {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         margin: 0 auto;
         padding: 0;
         max-width: 800px;
     }
 
     li {
-        display: inline-block;
+        display: flex;
         margin: 7px;
         padding: 5px 10px;
         color: $heading;
@@ -719,6 +753,11 @@ footer {
         list-style: none;
         cursor: default;
         font-size: 1.2em;
+
+        img {
+            width: 30px;
+            margin-right: 10px;
+        }
     }
 }
 
@@ -899,7 +938,7 @@ footer {
         text-align: center;
 
         p {
-            text-align: left;
+            text-align: center;
         }
     }
 

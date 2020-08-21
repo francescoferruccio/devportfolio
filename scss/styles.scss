@@ -666,12 +666,25 @@ footer {
 }
 
 .project {
+    display: flex;
     position: relative;
     max-width: 900px;
     margin: 0 auto 30px auto;
     overflow: hidden;
     background: #fff;
     border-radius: 4px;
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+
+        .project-image {
+            float: right;
+        }
+
+        .project-info {
+            margin: 0 300px 0 0;
+        }
+    }
 }
 
 .project-image {
@@ -687,6 +700,10 @@ footer {
 }
 
 .project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 300px);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -749,10 +766,11 @@ footer {
         margin: 7px;
         padding: 5px 10px;
         color: $heading;
-        background: darken($background-alt, 5%);
+        background: darken($background-alt, 0%);
         list-style: none;
         cursor: default;
         font-size: 1.2em;
+        border-radius: 5px;
 
         img {
             width: 30px;
@@ -997,12 +1015,23 @@ footer {
         }
     }
 
+    .project {
+    
+        &:nth-child(even) {
+    
+            .project-info {
+                margin: 0;
+            }
+        }
+    }
+
     .project-image {
         display: none;
     }
 
     .project-info {
         position: relative;
+        width: 100%;
         margin: 0;
         padding: 30px 15px;
         top: auto;

@@ -646,6 +646,27 @@ footer {
             font-size: 0.9em;
         }
     }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        
+        .btn-rounded-blue {
+            display: inline-block;
+            color: $base-color;
+            padding: 5px 10px;
+            border: 2px solid $base-color;
+            border-radius: 30px;
+            @include transition();
+            margin: auto;
+        
+            &:hover {
+                color: #fff;
+                background: $base-color;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 /*

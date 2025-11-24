@@ -27,6 +27,8 @@
         12. Media Queries
 */
 
+@use "sass:color";
+
 /*
     ------------------------
     ----- 1. Variables -----
@@ -41,7 +43,7 @@ VERDE: #61ce4e
 */
 // Define base and accent colors
 $base-color: #1b3c59;
-$base-color-hover: darken($base-color, 10%);
+$base-color-hover: color.adjust($base-color, $lightness: -10%);
 
 // Define background colors
 $background: #fff;
@@ -270,7 +272,7 @@ footer {
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        border: 3px solid lighten($text, 25%);
+        border: 3px solid color.adjust($text, $lightness: 25%);
         text-align:center;
     }
 
@@ -390,7 +392,7 @@ footer {
     }
 
     h2 {
-        color: lighten($base-color, 25%);
+        color: color.adjust($base-color, $lightness: 25%);
         font-weight: 500;
         font-size: 2.25em;
         margin-bottom: 15px;
@@ -426,7 +428,7 @@ footer {
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        border: 3px solid lighten($base-color, 25%);
+        border: 3px solid color.adjust($base-color, $lightness: 25%);
         text-align:center;
     }
 
@@ -791,7 +793,7 @@ footer {
         margin: 7px;
         padding: 5px 10px;
         color: $heading;
-        background: darken($background-alt, 0%);
+        background: $background-alt;
         list-style: none;
         cursor: default;
         font-size: 1.2em;
@@ -833,7 +835,7 @@ footer {
         border-radius: 4px;
         border: none;
         margin-bottom: 10px;
-        background: darken($base-color, 15%);
+        background: color.adjust($base-color, $lightness: -15%);
         color: #fff;
         @include transition();
         @include placeholder {
@@ -842,7 +844,7 @@ footer {
 
         &:focus {
             outline: none;
-            background: darken($base-color, 25%);
+            background: color.adjust($base-color, $lightness: -25%);
         }
     }
 
@@ -915,6 +917,10 @@ footer {
     ul {
         padding: 0 0 0 15px;
     }
+}
+
+.hidden {
+    display: none;
 }
 
 /*

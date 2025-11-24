@@ -193,7 +193,7 @@
     </div>
     <!-- End #education -->
 
-    <div id="projects" class="background-alt">
+    <div id="projects" class="background-alt hidden">
         <h2 class="heading">Progetti</h2>
         <div class="container">
             <div class="row">
@@ -321,7 +321,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2020 Francesco Ferruccio
+                        Copyright &copy; <span id="copyright-year"></span> Francesco Ferruccio
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -346,6 +346,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
